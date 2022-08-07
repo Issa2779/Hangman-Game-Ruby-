@@ -91,11 +91,15 @@ class Hangman
     def generate_stars(length)
     
         count = 0
-        @word.each do |stars|
+        @word.each do |letter|
         
             if count != length
     
-                @puzzle.push('*')
+                if @word[count] == ' '
+                    @puzzle.push(' ')
+                else
+                    @puzzle.push('*')
+                end
             end
             count = count + 1
         end 
